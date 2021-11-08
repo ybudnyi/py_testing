@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 def type_values_in_list(var_list):
     new_list = []
     for item in var_list:
@@ -7,24 +6,14 @@ def type_values_in_list(var_list):
     return new_list
 
 
-=======
->>>>>>> f01e9355b42cb4c017f21e2717cd6e61042d4187
 def min_max(var_list):
-    min_in_list = var_list[0]
-    max_in_list = var_list[0]
-    for item in var_list:
-        if item < min_in_list:
-            min_in_list = item
-        if item > max_in_list:
-            max_in_list = item
+    min_in_list = min(var_list)
+    max_in_list = max(var_list)
     return min_in_list, max_in_list
 
 
 def avg_from_list(var_list):
-    sum_from_list = 0
-    for item in var_list:
-        sum_from_list += item
-    average = sum_from_list / len(var_list)
+    average = sum(var_list) / len(var_list)
     return average
 
 
