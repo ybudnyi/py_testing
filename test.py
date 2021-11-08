@@ -25,15 +25,31 @@ class TestMain(unittest.TestCase):
             result_min, result_max = main.min_max(v)
             test_param = k
             self.assertEqual(result_max, test_param)
+
     def test_avrg(self):
-        test_param = {20: [10, 15, 20, 25, 30],
-                      -20: [-10, -15, -20, -25, -30],
-                      0: [0, 0, 0, 0, 0]
+        test_param = {32.8: [22, 33, 44, 10, 55],
+                      28: [20, 22, 21, 33, 44],
+                      7.8: [10, 5, 7, 8, 9],
+                      0: [0, 0, 0, 0, 0],
+                      -12.4: [-1, -21, -3, -17, -20]
                       }
         for k, v in test_param.items():
             result_value = main.avg_from_list(v)
             test_param = k
             self.assertEqual(result_value, test_param)
 
+    def test_type(self):
+        test_param = {55: ['22', '33', '44', '10', '55'],
+                      44: ['20', '22', '21', '33', '44'],
+                      10: ['10', '5', '7', '8', '9'],
+                      0: ['0', '0', '0', '0', '0'],
+                      -1: ['-1', '-21', '-3', '-17', '-20']
+                      }
+        for v in test_param.values():
+            result = main.type_values_in_list(v)
+            for item in test_param:
+                if type(item) != int:
+                    self.assertEqual(result, ValueError)
 
-unittest.main()
+if __name__ == "__main__":
+    unittest.main()
