@@ -1,6 +1,3 @@
-
-
-
 def min_max(var_list):
     min_in_list = var_list[0]
     max_in_list = var_list[0]
