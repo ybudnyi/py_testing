@@ -49,6 +49,7 @@ class TestMain(unittest.TestCase):
             for item in result:
                 if type(item) != int:
                     self.assertEqual(result, ValueError)
+                    
     def test_value(self):
         test_param = {55: ['22', '33', '44', 'foo', 'ffff']
                       }
