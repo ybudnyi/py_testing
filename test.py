@@ -39,11 +39,18 @@ class TestMain(unittest.TestCase):
             self.assertEqual(result_value, test_param)
 
     def test_type(self):
-        test_param = {55: ['22', '33', '44', '10', '55'],
-                      44: ['20', '22', '21', '33', '44'],
-                      10: ['10', '5', '7', '8', '9'],
-                      0: ['0', '0', '0', '0', '0'],
-                      -1: ['-1', '-21', '-3', '-17', '-20']
+        test_param = [['22', '33', '44', '10', '55'],
+                      ['20', '22', '21', '33', '44'],
+                      ['10', '5', '7', '8', '9'],
+                      ['0', '0', '0', '0', '0'],
+                      ['-1', '-21', '-3', '-17', '-20']]
+        for v in test_param:
+            result = main.type_values_in_list(v)
+            for item in result:
+                if type(item) != int:
+                    self.assertEqual(result, ValueError)
+    def test_value(self):
+        test_param = {55: ['22', '33', '44', 'foo', 'ffff']
                       }
         for v in test_param.values():
             result = main.type_values_in_list(v)

@@ -1,8 +1,11 @@
 def type_values_in_list(var_list):
     new_list = []
     for item in var_list:
-        item = int(item)
-        new_list.append(item)
+        try:
+            item = int(item)
+            new_list.append(item)
+        except ValueError as err:
+            return err
     return new_list
 
 
@@ -22,7 +25,6 @@ if __name__ == "__main__":
     for i in range(5):
         digit = input("Give a digit for a list: ")
         my_list.append(digit)
-    print(my_list)
     my_list = type_values_in_list(my_list)
     print(my_list)
     min_number, max_number = min_max(my_list)
