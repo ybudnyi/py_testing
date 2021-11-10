@@ -1,3 +1,4 @@
+##Code what create array and Unit Tests for testing Functions for this array.  
 PS C:\Users\ybudn\PycharmProjects\UnitTest> python -m unittest -v > README.md  
 test_avrg (test.TestMain) ... ok  
 test_max (test.TestMain) ... ok  
